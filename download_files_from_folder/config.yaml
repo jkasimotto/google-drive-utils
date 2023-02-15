@@ -1,0 +1,13 @@
+drive_folder_id:  # https://drive.google.com/drive/folders/<This Id Here>
+local_folder_path: # E.G. /path/to/store/local/audio/recordings
+options:
+  overwrite: true   # Set to true to overwrite existing files with the same name
+  rename: true      # Set to true to rename the file if a file with the same name already exists
+  skip: false       # Set to true to skip downloading the file if a file with the same name already exists
+  ask: false        # Set to true to ask the user what to do if a file with the same name already exists
+
+
+GOOGLE_DRIVE_CLIENT_SECRET_FILE: client_secret.json
+GOOGLE_DRIVE_TOKEN_FILE: token.json
+GOOGLE_DRIVE_SCOPES:
+  - https://www.googleapis.com/auth/drive.readonly

@@ -3,11 +3,59 @@ import os
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaIoBaseDownload
 from tqdm import tqdm
+import yaml
 
 from count import get_folder_file_count
 
+def read_config(config_path):
+    with open(config_path, 'r') as f:
+        config = yaml.safe_load(f)
+        return config['options']
 
-def download_file(service, file_id, dest_path):
+
+def handle_duplicate_file(dest_file_path, options):
+    if options['skip']:
+        print(f"Skipping file '{dest_file_path}' because it already exists.")
+        return False
+    elif options['rename']:
+        # Rename the file with a unique identifier
+        filename, ext = os.path.splitext(dest_file_path)
+        i = 1
+        while os.path.exists(dest_file_path):
+            dest_file_path = f"{filename}_{i}{ext}"
+            i += 1
+    elif options['ask']:
+        # Ask the user what to do
+        while True:
+            choice = input(
+                f"A file with the name '{dest_file_path}' already exists. What would you like to do? (o)verwrite, (r)ename, or (s)kip? ").lower()
+            if choice == 'o':
+                return True
+            elif choice == 'r':
+                # Rename the file with a unique identifier
+                filename, ext = os.path.splitext(dest_file_path)
+                i = 1
+                while os.path.exists(dest_file_path):
+                    dest_file_path = f"{filename}_{i}{ext}"
+                    i += 1
+                return True
+            elif choice == 's':
+                print(f"Skipping file '{dest_file_path}'.")
+                return False
+            else:
+                print("Invalid choice. Please enter 'o', 'r', or 's'.")
+    # Default behavior is to overwrite the file
+    return True
+
+
+def download_file(service, file_id, dest_path, options):
+    # Check if a file with the same name already exists
+    if os.path.exists(dest_path):
+        should_download = handle_duplicate_file(dest_path, options)
+        if not should_download:
+            return False
+
+    # Download the file
     request = service.files().get_media(fileId=file_id)
     with open(dest_path, 'wb') as f:
         downloader = MediaIoBaseDownload(f, request)
