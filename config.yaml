@@ -1,0 +1,8 @@
+download_files_from_folder:
+  drive_folder_id:  # https://drive.google.com/drive/folders/<This Id Here>
+  local_folder_path: # E.G. /path/to/store/local/audio/recordings
+
+GOOGLE_DRIVE_CLIENT_SECRET_FILE: client_secret.json
+GOOGLE_DRIVE_TOKEN_FILE: token.json
+GOOGLE_DRIVE_SCOPES:
+  - https://www.googleapis.com/auth/drive.readonly
