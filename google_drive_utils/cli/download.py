@@ -1,6 +1,6 @@
 import argparse
-from google_drive_utils.download_files_from_folder.download import download_files
-from google_drive_utils.cli.utils import add_common_args, parse_common_args
+from google_drive_utils.download.download import download_files
+from google_drive_utils.cli.utils import add_common_args
 
 
 def main():
