@@ -5,7 +5,7 @@ from googleapiclient.http import MediaIoBaseDownload
 from tqdm import tqdm
 import yaml
 
-from count import get_folder_file_count
+from google_drive_utils.count import get_folder_file_count
 
 def read_config(config_path):
     with open(config_path, 'r') as f:

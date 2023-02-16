@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='google-drive-api-utils',
+    name='google-drive-utils',
     version='0.1.0',
     description='A collection of utilities for working with the Google Drive API',
     author='Julian Otto',
     author_email='julianotto@outlook.com',
-    url='https://github.com/jkasimotto/google-drive-api-utils',
+    url='https://github.com/jkasimotto/google-drive-utils',
     packages=find_packages(),
     install_requires=[
         'google-auth',
