@@ -16,17 +16,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'download=google_drive_utils=google_drive_utils.cli.download:main',
-            'count=google_drive_utils=google_drive_utils.cli.count:main',
+            'download-drive-files=google_drive_utils.cli.download:main',
+            'count-drive-files=google_drive_utils.cli.count:main',
         ]
-    },
-    classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-    ],
+    }
 )

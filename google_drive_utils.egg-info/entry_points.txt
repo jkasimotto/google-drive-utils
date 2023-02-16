@@ -1,0 +1,3 @@
+[console_scripts]
+count-drive-files = google_drive_utils.cli.count:main
+download-drive-files = google_drive_utils.cli.download:main
