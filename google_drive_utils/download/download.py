@@ -14,17 +14,17 @@ def read_config(config_path):
 
 
 def handle_duplicate_file(dest_file_path, options):
-    if options['skip']:
+    if options == "skip":
         print(f"Skipping file '{dest_file_path}' because it already exists.")
         return False
-    elif options['rename']:
+    elif options == "rename":
         # Rename the file with a unique identifier
         filename, ext = os.path.splitext(dest_file_path)
         i = 1
         while os.path.exists(dest_file_path):
             dest_file_path = f"{filename}_{i}{ext}"
             i += 1
-    elif options['ask']:
+    elif options == "ask":
         # Ask the user what to do
         while True:
             choice = input(
@@ -71,7 +71,7 @@ def download_file(service, file_id, dest_path, options):
     return True
 
 
-def download_files(service, folder_id, dest_path):
+def download_files(service, folder_id, dest_path, options):
     # Get the number of files in the folder
     file_count = count_files(folder_id, service)
 
@@ -99,7 +99,7 @@ def download_files(service, folder_id, dest_path):
     for file in tqdm(files, desc='Downloading files'):
         # Download the file to the destination folder
         dest_file_path = os.path.join(dest_path, file['name'])
-        success = download_file(service, file['id'], dest_file_path)
+        success = download_file(service, file['id'], dest_file_path, options)
         if success:
             print(f"Downloaded {file['name']}.")
             # Update the progress bar

@@ -6,8 +6,3 @@ options:
   skip: false       # Set to true to skip downloading the file if a file with the same name already exists
   ask: false        # Set to true to ask the user what to do if a file with the same name already exists
 
-
-GOOGLE_DRIVE_CLIENT_SECRET_FILE: client_secret.json
-GOOGLE_DRIVE_TOKEN_FILE: token.json
-GOOGLE_DRIVE_SCOPES:
-  - https://www.googleapis.com/auth/drive.readonly

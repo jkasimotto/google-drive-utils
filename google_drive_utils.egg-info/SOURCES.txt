@@ -15,5 +15,5 @@ google_drive_utils/count/__init__.py
 google_drive_utils/count/count.py
 google_drive_utils/download/__init__.py
 google_drive_utils/download/download.py
-google_drive_utils/get_credentials/__init__.py
-google_drive_utils/get_credentials/get_credentials.py
+google_drive_utils/service/__init__.py
+google_drive_utils/service/get_service.py

@@ -16,8 +16,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'download-drive-files=google_drive_utils.cli.download:main',
-            'count-drive-files=google_drive_utils.cli.count:main',
+            'gdrive-download=google_drive_utils.cli.download:main',
+            'gdrive-count=google_drive_utils.cli.count:main',
         ]
     }
 )
