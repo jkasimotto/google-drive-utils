@@ -5,7 +5,7 @@ from googleapiclient.http import MediaIoBaseDownload
 from tqdm import tqdm
 import yaml
 
-from google_drive_utils.count import get_folder_file_count
+from google_drive_utils.count.count import count_files
 
 def read_config(config_path):
     with open(config_path, 'r') as f:
@@ -73,7 +73,7 @@ def download_file(service, file_id, dest_path, options):
 
 def download_files(service, folder_id, dest_path):
     # Get the number of files in the folder
-    file_count = get_folder_file_count(folder_id, service)
+    file_count = count_files(folder_id, service)
 
     if file_count is None:
         print('Exiting script due to an error.')

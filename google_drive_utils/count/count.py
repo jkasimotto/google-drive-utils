@@ -1,7 +1,7 @@
 
 from googleapiclient.errors import HttpError
 
-def get_folder_file_count(folder_id, service):
+def count_files(folder_id, service):
     # Construct the query to retrieve files in the folder
     query = f"'{folder_id}' in parents and trashed = false"
 
