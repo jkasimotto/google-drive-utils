@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='google_drive_utils',
-    version='0.1.0',
+    version='0.2.0',
     description='A collection of utilities for working with the Google Drive API',
     author='Julian Otto',
     author_email='julianotto@outlook.com',
@@ -16,8 +16,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'gdrive-download=google_drive_utils.cli.download:main',
-            'gdrive-count=google_drive_utils.cli.count:main',
+            'drive-download=google_drive_utils.download.cli:download_cli',
         ]
     }
 )

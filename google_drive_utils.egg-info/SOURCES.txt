@@ -14,6 +14,7 @@ google_drive_utils/cli/utils.py
 google_drive_utils/count/__init__.py
 google_drive_utils/count/count.py
 google_drive_utils/download/__init__.py
-google_drive_utils/download/download.py
+google_drive_utils/download/cli.py
+google_drive_utils/download/main.py
 google_drive_utils/service/__init__.py
 google_drive_utils/service/get_service.py
