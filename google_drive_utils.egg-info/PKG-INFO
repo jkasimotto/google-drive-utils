@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: google-drive-utils
-Version: 0.1.0
-Summary: A collection of utilities for working with the Google Drive API
-Home-page: https://github.com/jkasimotto/google_drive_utils
-Author: Julian Otto
-Author-email: julianotto@outlook.com

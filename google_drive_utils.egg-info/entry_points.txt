@@ -1,2 +1,0 @@
-[console_scripts]
-drive-download = google_drive_utils.download.cli:download_cli

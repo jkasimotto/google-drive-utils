@@ -2,3 +2,4 @@ venv
 dist
 *.egg-info
 secrets
+google_drive_utils.egg-info
